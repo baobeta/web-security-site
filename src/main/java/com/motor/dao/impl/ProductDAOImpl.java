@@ -40,8 +40,8 @@ public class ProductDAOImpl extends AbstractDAO<Product> implements IProductDAO 
     }
     @Override
     public Product findOne(int id) {
-        String sql = "select * from Products where id = '" + String.valueOf(id) + "'";
-        List<Product> products = query(sql, new ProductMapper());
+        String sql = "select * from Products where id = ?";
+        List<Product> products = query(sql, new ProductMapper(), id);
         return products.isEmpty() ? null : products.get(0);
     }
 

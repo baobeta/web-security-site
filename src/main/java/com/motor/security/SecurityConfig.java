@@ -53,7 +53,7 @@ public class SecurityConfig {
         List<String> cusUrlPattern = new ArrayList<>();
         cusUrlPattern.add("/home/checkout");
         cusUrlPattern.add("/home/userinfo");
-        cusUrlPattern.add("/home/oder");
+        cusUrlPattern.add("/home/order");
         mapConfig.put(ROLE_CUSTOMER, cusUrlPattern);
     }
 
