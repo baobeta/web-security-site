@@ -38,6 +38,10 @@ public class ProductController extends HttpServlet {
             resp.sendRedirect("/error");
             return;
         }
+        if (pid.length() > 4) {
+            resp.sendRedirect("/error");
+            return;
+        }
 
         int productId = Integer.parseInt(pid);
 

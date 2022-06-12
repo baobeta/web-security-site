@@ -36,6 +36,10 @@ public class CategoryController extends HttpServlet {
             resp.sendRedirect("/error");
             return;
         }
+        if (cid.length() > 4) {
+            resp.sendRedirect("/error");
+            return;
+        }
 
         int cId = Integer.parseInt(cid);
 
