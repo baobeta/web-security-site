@@ -29,6 +29,7 @@ public class ProductController extends HttpServlet {
         // thiết lập tiếng Việt
         resp.setContentType("text/html");
         resp.setCharacterEncoding("UTF-8");
+        resp.setContentLength(3);
         req.setCharacterEncoding("UTF-8");
 
         String pid = req.getParameter("pid");

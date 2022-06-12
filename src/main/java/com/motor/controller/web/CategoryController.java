@@ -25,12 +25,13 @@ public class CategoryController extends HttpServlet {
         // thiết lập tiếng Việt
         resp.setContentType("text/html");
         resp.setCharacterEncoding("UTF-8");
+        resp.setContentLength(3);
         req.setCharacterEncoding("UTF-8");
+
 
         String cid = req.getParameter("cid");
 
         int cId = Integer.parseInt(cid);
-
 
 
         Category cate = categoryService.findOne(cId);

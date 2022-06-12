@@ -59,11 +59,9 @@
                     </a>
 
                     <ul class="dropdown-menu">
-
                     <c:forEach items="${AllCate}" var ="c">
                         <li><a href="/home/category?cid=${c.id}"> ${c.name}</a></li>
                     </c:forEach>
-
                     </ul>
                 </li>
 
