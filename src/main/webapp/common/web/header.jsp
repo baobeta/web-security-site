@@ -3,11 +3,11 @@
 <%@include file="/common/taglib.jsp" %>
 
 
-
 <!-- BEGIN HEADER -->
 <div class="header">
     <div class="container">
-        <a class="site-logo" href="/home"><img src="../templates/assets1/frontend/layout/img/logos/logo-shop-red.png" alt="Metronic Shop UI"></a>
+        <a class="site-logo" href="/home"><img src="../templates/assets1/frontend/layout/img/logos/logo-shop-red.png"
+                                               alt="Metronic Shop UI"></a>
 
         <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
 
@@ -15,17 +15,17 @@
 
         <div class="top-cart-block" href="/checkout">
 
-            <div class="top-cart-info" >
+            <div class="top-cart-info">
 
-                <c:set var="count" value="${0}" />
+                <c:set var="count" value="${0}"/>
                 <c:forEach items="${sessionScope.cart}" var="map">
-                    <c:set var="count" value="${count + map.value.quantity}" />
+                    <c:set var="count" value="${count + map.value.quantity}"/>
                 </c:forEach>
                 <a href="/home/cart" class="top-cart-info-count">CART</a>
                 <a href="/home/cart" class="top-cart-info-value">${count} </a>
             </div>
 
-            <a href ="/home/cart" > <i  class="fa fa-shopping-cart" ></i></a>
+            <a href="/home/cart"> <i class="fa fa-shopping-cart"></i></a>
 
         </div>
 
@@ -53,25 +53,28 @@
 
 
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" data-target="/home/category?cid=0" href="/home/category?cid=0">
+                    <a class="dropdown-toggle" data-toggle="dropdown" data-target="/home/category?cid=0"
+                       href="/home/category?cid=0">
                         CATEGORY
 
                     </a>
 
                     <ul class="dropdown-menu">
-                    <c:forEach items="${AllCate}" var ="c">
-                        <li><a href="/home/category?cid=${c.id}"> ${c.name}</a></li>
-                    </c:forEach>
+
+                        <c:forEach items="${AllCate}" var="c">
+                            <li><a href="/home/category?cid=${c.id}"> ${c.name}</a></li>
+                        </c:forEach>
+
                     </ul>
                 </li>
 
 
-
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href=" ${sessionScope.loginedUser != null ? "/home/userinfo?id=3": "/login"}">
+                    <a class="dropdown-toggle" data-toggle="dropdown" data-target="#"
+                       href=" ${sessionScope.loginedUser != null ? "/home/userinfo?id=3": "/login"}">
                         ${sessionScope.loginedUser != null ? sessionScope.loginedUser.fullname : "LOGIN"}
-                            <img alt=""  width="22" height="22"
-                                 src="${sessionScope.loginedUser != null ? sessionScope.loginedUser.image : "https://png.pngtree.com/png-clipart/20190516/original/pngtree-male-avatar-vector-icon-png-image_4005072.jpg"}" />
+                        <img alt="" width="22" height="22"
+                             src="${sessionScope.loginedUser != null ? sessionScope.loginedUser.image : "https://png.pngtree.com/png-clipart/20190516/original/pngtree-male-avatar-vector-icon-png-image_4005072.jpg"}"/>
                     </a>
 
                     <!-- BEGIN DROPDOWN MENU -->
@@ -87,7 +90,6 @@
                 </li>
 
 
-
                 <!-- BEGIN TOP SEARCH -->
                 <li class="menu-search">
                     <span class="sep"></span>
@@ -95,7 +97,14 @@
                     <div class="search-box">
                         <form action="/home/search">
                             <div class="input-group">
-                                <input type="text" name="txt" value="${txtS}" placeholder="Search" class="form-control">
+                                <input type="text"
+                                       name="txt"
+                                       value="${fn:escapeXml(txtS)}"
+                                <%-- value="${txtS}"--%>
+                                <%-- value='<c:out value="${txtS}" escapeXml="true" />'--%>
+                                <%-- value="${fn:escapeXml(txtS)}"--%>
+                                       placeholder="Search"
+                                       class="form-control">
                                 <span class="input-group-btn">
                       <button class="btn btn-primary" type="submit">Search</button>
                     </span>

@@ -4,6 +4,7 @@ import com.motor.model.Category;
 import com.motor.model.Product;
 import com.motor.service.*;
 import com.motor.service.impl.*;
+import org.apache.commons.text.StringEscapeUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -27,9 +28,9 @@ public class SearchController extends HttpServlet {
         resp.setContentType("text/html");
         resp.setCharacterEncoding("UTF-8");
         req.setCharacterEncoding("UTF-8");
-
         String txt1 = req.getParameter("txt");
 
+//        String txt1 = StringEscapeUtils.escapeHtml4(req.getParameter("txt"));
 
         List<Category> listCate= categoryService.findAll();
 
@@ -39,7 +40,6 @@ public class SearchController extends HttpServlet {
         req.setAttribute("txtS", txt1);
         req.setAttribute("listAll", listS);
         req.setAttribute("AllCate",listCate);
-
 
         req.getRequestDispatcher("/views/web/search.jsp").forward(req, resp);
     }
