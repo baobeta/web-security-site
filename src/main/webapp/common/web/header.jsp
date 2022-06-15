@@ -95,9 +95,10 @@
                     <span class="sep"></span>
                     <i class="fa fa-search search-btn"></i>
                     <div class="search-box">
-                        <form action="/home/search">
+                        <c:url var="search" value="/home/search"/>
+                        <<form action="${search}">
                             <div class="input-group">
-                                <input type="text" name="txt" value="${txtS}" placeholder="Search" class="form-control">
+                                <input type="hiden" name="txt" value="${txtS}" placeholder="Search" class="form-control">
                                 <span class="input-group-btn">
                       <button class="btn btn-primary" type="submit">Search</button>
                     </span>

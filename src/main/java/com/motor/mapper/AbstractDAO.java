@@ -8,9 +8,9 @@ import java.util.List;
 public class AbstractDAO<T> implements GenericDAO<T> {
     private final String serverName = "localhost";
     private final String dbName = "web_ban_xe";
-    private final String portNumber = "1433";
+    private final String portNumber = "1434";
     private final String instance = "";// MSSQLSERVER LEAVE THIS ONE EMPTY IF YOUR SQL IS A SINGLE INSTANCE
-    private final String userID = "sa";
+    private final String userID = "abc";
     private final String password = "1234";
 
     private Connection getConnection() throws Exception {

@@ -242,18 +242,18 @@ License: You must have a valid license purchased only from themeforest (the abov
 
 
  -->
-<script src="../templates/assets1/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
-<script src="../templates/assets1/global/plugins/rateit/src/jquery.rateit.js" type="text/javascript"></script>
-<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js" type="text/javascript"></script><!-- for slider-range -->
+<script src="<c:url value="/templates/assets1/global/plugins/uniform/jquery.uniform.min.js"/>" type="text/javascript"></script>
+<script src="<c:url value="/templates/assets1/global/plugins/rateit/src/jquery.rateit.js"/>" type="text/javascript"></script>
+<script src="<c:url value="http://code.jquery.com/ui/1.10.3/jquery-ui.js"/>" type="text/javascript"></script><!-- for slider-range -->
 
-<script src="../templates/assets1/frontend/layout/scripts/layout.js" type="text/javascript"></script>
-
-
+<script src="<c:url value="/templates/assets1/frontend/layout/scripts/layout.js"/>" type="text/javascript"></script>
 
 
 
-<script src="//code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+<script src="<c:url value="//code.jquery.com/jquery-3.6.0.min.js"/>" type="text/javascript"></script>
+<script src="<c:url value="//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"/>"></script>
 <script>
 
   function loadMore()
