@@ -28,7 +28,7 @@ public class RegisterController extends HttpServlet {
         resp.setContentType("text/html");
         resp.setCharacterEncoding("UTF-8");
         req.setCharacterEncoding("UTF-8");
-
+        resp.setHeader("X-Content-Type-Options", "nosniff");
         int role = Integer.parseInt(req.getParameter("role_id"));
 
         String fullname = req.getParameter("fullname");

@@ -26,7 +26,7 @@ public class LoadMoreController extends HttpServlet {
         resp.setContentType("text/html");
         resp.setCharacterEncoding("UTF-8");
         req.setCharacterEncoding("UTF-8");
-
+        resp.setHeader("X-Content-Type-Options", "nosniff");
         //tam thoi load ra 3 san pham truoc
 
         String amount = req.getParameter("exits");

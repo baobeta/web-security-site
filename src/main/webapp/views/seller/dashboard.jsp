@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@include file="/common/taglib.jsp" %>
+<%
+    response.setHeader("X-Content-Type-Options", "nosniff");
+%>
 <head>
     <title>Dashboard</title>
     <%@include file="/common/seller/theme.jsp" %>

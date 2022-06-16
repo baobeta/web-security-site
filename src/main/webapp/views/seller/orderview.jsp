@@ -2,6 +2,9 @@
          pageEncoding="UTF-8" %>
 <%@include file="/common/taglib.jsp" %>
 <%--<fmt:setLocale value="fr_CA"/>--%>
+<%
+    response.setHeader("X-Content-Type-Options", "nosniff");
+%>
 <head>
     <title>Order Details</title>
     <!-- BEGIN PAGE LEVEL STYLES -->
