@@ -2,8 +2,10 @@ package com.motor.controller.web;
 
 import com.motor.model.Category;
 import com.motor.model.Product;
-import com.motor.service.*;
-import com.motor.service.impl.*;
+import com.motor.service.ICategoryService;
+import com.motor.service.IProductService;
+import com.motor.service.impl.CategoryServiceImpl;
+import com.motor.service.impl.ProductServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,6 +21,7 @@ public class CategoryController extends HttpServlet {
     private static final long serialVersionUID = 1L;
     IProductService productService = new ProductServiceImpl();
     ICategoryService categoryService = new CategoryServiceImpl();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -26,26 +29,35 @@ public class CategoryController extends HttpServlet {
         resp.setContentType("text/html");
         resp.setCharacterEncoding("UTF-8");
         req.setCharacterEncoding("UTF-8");
+        resp.setHeader("X-Content-Type-Options", "nosniff");
 
         String cid = req.getParameter("cid");
 
-        int cId = Integer.parseInt(cid);
+        if (cid == null) {
+            resp.sendRedirect("/error");
+            return;
+        }
+        if (cid.length() > 4) {
+            resp.sendRedirect("/error");
+            return;
+        }
 
+        int cId = Integer.parseInt(cid);
 
 
         Category cate = categoryService.findOne(cId);
 
         List<Product> productByCate = productService.findAllByCategory(cId);
-        List<Category> listCate= categoryService.findAll();
+        List<Category> listCate = categoryService.findAll();
 
         List<Product> list3 = productService.getTop3Product();
 
         req.setAttribute("list3", list3);
 
         req.setAttribute("productCate", productByCate);
-        req.setAttribute("AllCate",listCate);
-        req.setAttribute("cid",cId);
-        req.setAttribute("cate",cate);
+        req.setAttribute("AllCate", listCate);
+        req.setAttribute("cid", cId);
+        req.setAttribute("cate", cate);
 
         req.getRequestDispatcher("/views/web/category.jsp").forward(req, resp);
     }

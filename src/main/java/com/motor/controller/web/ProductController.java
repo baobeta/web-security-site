@@ -30,13 +30,27 @@ public class ProductController extends HttpServlet {
         resp.setContentType("text/html");
         resp.setCharacterEncoding("UTF-8");
         req.setCharacterEncoding("UTF-8");
+        resp.setHeader("X-Content-Type-Options", "nosniff");
+
 
         String pid = req.getParameter("pid");
 
-//        int productId = Integer.parseInt(pid);
+        if(pid==null){
+            resp.sendRedirect("/error");
+            return;
+        }
+        if (pid.length() > 4) {
+            resp.sendRedirect("/error");
+            return;
+        }
+
+        int productId = Integer.parseInt(pid);
 
 
-        Product product = productService.findOneById(pid);
+//        Product product = productService.findOneById(pid);
+
+        Product product = productService.findOne(productId);
+
         User seller = userService.findOne(product.getSeller_id());
         List<Product> listTopProducts = productService.findAll();
         List<Product> list3 = productService.getTop3Product();

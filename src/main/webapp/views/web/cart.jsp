@@ -1,18 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@include file="/common/taglib.jsp" %>
+<%
+    response.setHeader("X-Content-Type-Options", "nosniff");
+%>
 <!DOCTYPE html>
-<!--
-Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
-Version: 3.3.1
-Author: KeenThemes
-Website: http://www.keenthemes.com/
-Contact: support@keenthemes.com
-Follow: www.twitter.com/keenthemes
-Like: www.facebook.com/keenthemes
-Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
-License: You must have a valid license purchased only from themeforest (the above link) in order to legally use the theme for your project.
--->
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
 <!--[if !IE]><!-->
@@ -120,8 +112,10 @@ License: You must have a valid license purchased only from themeforest (the abov
 <script src="../templates/assets1/global/plugins/respond.min.js"></script>
 <![endif]-->
 <script src="../templates/assets1/global/plugins/jquery.min.js" type="text/javascript"></script>
-<script src="../templates/assets1/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
-<script src="../templates/assets1/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<%--<script src="../templates/assets1/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>--%>
+<%--<script src="../templates/assets1/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>--%>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.1/jquery-migrate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="../templates/assets1/frontend/layout/scripts/back-to-top.js" type="text/javascript"></script>
 <script src="../templates/assets1/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->

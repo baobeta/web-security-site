@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
+
          pageEncoding="UTF-8" %>
 <%@include file="/common/taglib.jsp" %>
-
+<%
+    response.setHeader("X-Content-Type-Options", "nosniff");
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -189,16 +192,19 @@
 <div class="copyright">2021 &copy; HUNGPQ
 </div>
 <!-- END LOGIN -->
-<script
-        src="<c:url value="/templates/assets/global/plugins/jquery.min.js"/>"
-        type="text/javascript"></script>
-<script
-        src="<c:url value="/templates/assets/global/plugins/jquery-migrate.min.js"/>"
-        type="text/javascript"></script>
-<script
-        src="<c:url value="/templates/assets/global/plugins/bootstrap/js/bootstrap.min.js"/>"
-        type="text/javascript"></script>
-<script
+<%--<script--%>
+<%--        src="<c:url value="/templates/assets/global/plugins/jquery.min.js"/>"--%>
+<%--        type="text/javascript"></script>--%>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<%--<script--%>
+<%--        src="<c:url value="/templates/assets/global/plugins/jquery-migrate.min.js"/>"--%>
+<%--        type="text/javascript"></script>--%>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.1/jquery-migrate.min.js"></script>
+<%--<script--%>
+<%--        src="<c:url value="/templates/assets/global/plugins/bootstrap/js/bootstrap.min.js"/>"--%>
+<%--        type="text/javascript"></script>--%>
+<%--<script--%>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         src="<c:url value="/templates/assets/global/plugins/jquery.blockui.min.js"/>"
         type="text/javascript"></script>
 <script

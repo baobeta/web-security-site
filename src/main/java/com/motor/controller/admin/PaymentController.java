@@ -24,6 +24,8 @@ public class PaymentController extends HttpServlet {
         resp.setContentType("text/html");
         resp.setCharacterEncoding("UTF-8");
         req.setCharacterEncoding("UTF-8");
+        resp.setHeader("X-Content-Type-Options", "nosniff");
+
         List<Payment> payments = paymentService.findAll();
 
         String action = req.getParameter("action");

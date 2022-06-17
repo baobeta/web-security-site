@@ -24,6 +24,8 @@ public class ProductController extends HttpServlet {
         resp.setContentType("text/html");
         resp.setCharacterEncoding("UTF-8");
         req.setCharacterEncoding("UTF-8");
+        resp.setHeader("X-Content-Type-Options", "nosniff");
+
         List<Product> products = productService.findAll();
 
         String action = req.getParameter("action");
