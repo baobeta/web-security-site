@@ -26,6 +26,7 @@ public class UserInfoController extends HttpServlet {
         resp.setContentType("text/html");
         resp.setCharacterEncoding("UTF-8");
         req.setCharacterEncoding("UTF-8");
+        resp.setHeader("X-Content-Type-Options", "nosniff");
         HttpSession session = req.getSession();
         User user = (User) session.getAttribute("loginedUser");
 

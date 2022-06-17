@@ -35,6 +35,7 @@ public class OrderviewController extends HttpServlet {
         resp.setContentType("text/html");
         resp.setCharacterEncoding("UTF-8");
         req.setCharacterEncoding("UTF-8");
+        resp.setHeader("X-Content-Type-Options", "nosniff");
 
         List<OrderStatus> orderStatuses = orderStatusService.findAll();
         Order order = new Order();

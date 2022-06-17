@@ -35,6 +35,7 @@ public class DashboardController extends HttpServlet {
         resp.setContentType("text/html");
         resp.setCharacterEncoding("UTF-8");
         req.setCharacterEncoding("UTF-8");
+        resp.setHeader("X-Content-Type-Options", "nosniff");
 
         int countCustomer = userService.countCustomer();
         int countSeller = userService.countSeller();

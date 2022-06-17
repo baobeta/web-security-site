@@ -32,7 +32,7 @@ public class CheckoutController extends HttpServlet {
         resp.setContentType("text/html");
         resp.setCharacterEncoding("UTF-8");
         req.setCharacterEncoding("UTF-8");
-
+        resp.setHeader("X-Content-Type-Options", "nosniff");
 
         String txt1 = req.getParameter("txt");
 
