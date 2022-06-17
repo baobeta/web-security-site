@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<html lang="en" charset="utf-8"><html lang="en" charset="utf-8"><html lang="en" charset="utf-8"><%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@include file="/common/taglib.jsp" %>
 <%
@@ -125,7 +125,7 @@
             <div class="item">
               <a href="/home/product?pid=${i.id}"><img src="${i.image}" alt="Some Shoes in Animal with Cut Out"></a>
               <h3><a href="/home/product?pid=${i.id}">${i.name}</a></h3>
-              <div class="price">${i.price} VNĐ</div>
+              <div class="price"> <fmt:formatNumber value="${i.price}" type="currency" maxFractionDigits="0" currencySymbol="VNĐ"/></div>
             </div>
           </c:forEach>
         </div>
@@ -203,7 +203,8 @@
                     </div>
                   </div>
                   <h3><a href="/home/product?pid=${p.id}">${p.name}</a></h3>
-                  <div class="pi-price">${p.price}</div>
+                  <div class="pi-price"><fmt:formatNumber value="${p.price}" type="currency"
+                                                           maxFractionDigits="0" currencySymbol="VNĐ"/></div>
 
                 </div>
               </div>

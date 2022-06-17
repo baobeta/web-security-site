@@ -1,4 +1,4 @@
-<?php
+<html lang="en" charset="utf-8"><html lang="en" charset="utf-8"><html lang="en" charset="utf-8"><?php
 
 /**
  * Jcrop image cropping plugin for jQuery

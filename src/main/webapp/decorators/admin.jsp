@@ -2,8 +2,7 @@
          pageEncoding="UTF-8" %>
 <%@include file="/common/taglib.jsp" %>
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en" charset="utf-8">
     <!-- Site meta -->
     <meta charset="utf-8">
     <meta name="viewport"

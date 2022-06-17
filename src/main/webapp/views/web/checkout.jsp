@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<html lang="en" charset="utf-8"><%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@include file="/common/taglib.jsp" %>
 <%
@@ -157,7 +157,7 @@
                                                         <strong>${map.value.pid.price}</strong>
                                                     </td>
                                                     <td class="goods-page-total">
-                                                        <strong>${map.value.pid.price * map.value.quantity}</strong>
+                                                        <strong><fmt:formatNumber value="${map.value.pid.price * map.value.quantity}" type="currency" maxFractionDigits="0" currencySymbol="VNĐ"/></strong>
                                                     </td>
                                                     <td class="del-goods-col">
                                                         <a class="del-goods" href="${pageContext.request.contextPath}/home/cart-remove?pId=${map.value.pid.id}">&nbsp;</a>
@@ -176,7 +176,7 @@
                                         </c:forEach>
                                             <li>
                                                 <em>Sub total</em>
-                                                <strong class="price">${total }</strong>
+                                                <strong class="price"><fmt:formatNumber value="${total }" type="currency" maxFractionDigits="0" currencySymbol="VNĐ"/></strong>
                                             </li>
                                             <li>
                                                 <em>Shipping cost</em>
