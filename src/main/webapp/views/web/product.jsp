@@ -157,33 +157,6 @@
                                             <p>Sed velit quam, auctor id semper a, hendrerit eget justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis vel arcu pulvinar dolor tempus feugiat id in orci. Phasellus sed erat leo. Donec luctus, justo eget ultricies tristique, enim mauris bibendum orci, a sodales lectus purus ut lorem.</p>
                                         </div>
                                     </div>
-
-                                    <!-- BEGIN FORM-->
-<%--                                    <form action="#" class="reviews-form" role="form">--%>
-<%--                                        <h2>Write a review</h2>--%>
-<%--                                        <div class="form-group">--%>
-<%--                                            <label for="name">Name <span class="require">*</span></label>--%>
-<%--                                            <input type="text" class="form-control" id="name">--%>
-<%--                                        </div>--%>
-<%--                                        <div class="form-group">--%>
-<%--                                            <label for="email">Email</label>--%>
-<%--                                            <input type="text" class="form-control" id="email">--%>
-<%--                                        </div>--%>
-<%--                                        <div class="form-group">--%>
-<%--                                            <label for="review">Review <span class="require">*</span></label>--%>
-<%--                                            <textarea class="form-control" rows="8" id="review"></textarea>--%>
-<%--                                        </div>--%>
-<%--                                        <div class="form-group">--%>
-<%--                                            <label for="email">Rating</label>--%>
-<%--                                            <input type="range" value="4" step="0.25" id="backing5">--%>
-<%--                                            <div class="rateit" data-rateit-backingfld="#backing5" data-rateit-resetable="false"  data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="5">--%>
-<%--                                            </div>--%>
-<%--                                        </div>--%>
-<%--                                        <div class="padding-top-20">--%>
-<%--                                            <button type="submit" class="btn btn-primary">Send</button>--%>
-<%--                                        </div>--%>
-<%--                                    </form>--%>
-                                    <!-- END FORM-->
                                 </div>
                             </div>
                         </div>
