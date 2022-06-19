@@ -18,7 +18,7 @@ public class XFrameOptionsFilter implements Filter{
 
         HttpServletResponse response = (HttpServletResponse) servletResponse;
         response.addHeader("X-Frame-Options", "DENY");
-
+        response.setHeader("X-Content-Type-Options", "nosniff");
         filterChain.doFilter(servletRequest, response);
     }
 
