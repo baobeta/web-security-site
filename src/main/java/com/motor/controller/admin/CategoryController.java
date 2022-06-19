@@ -23,6 +23,9 @@ public class CategoryController extends HttpServlet {
         resp.setContentType("text/html");
         resp.setCharacterEncoding("UTF-8");
         req.setCharacterEncoding("UTF-8");
+
+        resp.setHeader("X-Content-Type-Options", "nosniff");
+
         List<Category> categories = categoryService.findAll();
 
         String action = req.getParameter("action");

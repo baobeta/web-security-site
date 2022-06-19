@@ -27,7 +27,7 @@ public class CartDelController extends HttpServlet {
         resp.setContentType("text/html");
         resp.setCharacterEncoding("UTF-8");
         req.setCharacterEncoding("UTF-8");
-
+        resp.setHeader("X-Content-Type-Options", "nosniff");
 
 
         String pId = req.getParameter("pId");
