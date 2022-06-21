@@ -1,5 +1,6 @@
+<%@ page import="com.motor.util.CSRF" %>
 <html lang="en" charset="utf-8"><%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
+                                         pageEncoding="UTF-8" %>
 <%@include file="/common/taglib.jsp" %>
 <%
     response.setHeader("X-Content-Type-Options", "nosniff");
@@ -23,11 +24,19 @@
         <div class="row margin-bottom-40">
             <!-- BEGIN CONTENT -->
             <div class="col-md-12 col-sm-12">
+                <%
+                    // generate a random CSRF token
+                    String csrfToken = CSRF.getToken();
+
+                    // place the CSRF token in a cookie
+                    javax.servlet.http.Cookie cookie = new javax.servlet.http.Cookie("csrfToken", csrfToken);
+                    response.addCookie(cookie);
+                %>
                 <h1>Checkout</h1>
                 <!-- BEGIN CHECKOUT PAGE -->
                 <form action="/home/checkout" method="post">
                 <div class="panel-group checkout-page accordion scrollable" id="checkout-page" >
-
+                    <input type="hidden" name="csrfToken" value="<%= csrfToken %>"/>
                     <!-- BEGIN CHECKOUT -->
                     <div id="checkout" class="panel panel-default">
                         <div class="panel-heading">

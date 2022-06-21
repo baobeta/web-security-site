@@ -8,6 +8,7 @@ import org.apache.commons.text.StringEscapeUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -21,9 +22,35 @@ public class SearchController extends HttpServlet {
     IProductService productService = new ProductServiceImpl();
     ICategoryService categoryService = new CategoryServiceImpl();
 
+    public void doAction(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        // get the CSRF cookie
+        String csrfCookie = null;
+        for (Cookie cookie : request.getCookies()) {
+            if (cookie.getName().equals("csrf")) {
+                csrfCookie = cookie.getValue();
+            }
+        }
+
+        // get the CSRF form field
+        String csrfField = request.getParameter("csrf");
+
+        // validate CSRF
+        if (csrfCookie == null || csrfField == null || !csrfCookie.equals(csrfField)) {
+            try {
+                response.sendError(401);
+            } catch (IOException e) {
+                // ...
+            }
+            response.sendRedirect("/error");
+            return;
+        }
+
+        // ...
+    }
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        doAction(req,resp);
         // thiết lập tiếng Việt
         resp.setContentType("text/html");
         resp.setCharacterEncoding("UTF-8");
