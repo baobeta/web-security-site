@@ -165,12 +165,6 @@
     <%--    <script type="text/javascript"--%>
     <%--            src="https://code.jquery.com/jquery-2.1.1.min.js"></script>--%>
 
-    <!--Data Table-->
-    <script type="text/javascript"
-            src=" https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript"
-            src=" https://cdn.datatables.net/buttons/1.2.4/js/dataTables.buttons.min.js"></script>
-
     <!--Export table buttons-->
     <script type="text/javascript"
             src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>

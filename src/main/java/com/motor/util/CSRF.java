@@ -1,4 +1,5 @@
-﻿package com.motor.util;
+package com.motor.util;
+
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.Base64;

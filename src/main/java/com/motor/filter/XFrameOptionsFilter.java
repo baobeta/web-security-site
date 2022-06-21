@@ -2,6 +2,7 @@ package com.motor.filter;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
@@ -18,8 +19,11 @@ public class XFrameOptionsFilter implements Filter{
 
         HttpServletResponse response = (HttpServletResponse) servletResponse;
         response.addHeader("X-Frame-Options", "DENY");
-        response.setHeader("X-Content-Type-Options", "response.setHeader(\"Set-Cookie\", \"key=value; HttpOnly; SameSite=strict\")");
-        response.setHeader("Set-Cookie", "key=value; HttpOnly; SameSite=strict");
+        response.addHeader("X-Content-Type-Options", "nosniff");
+        Cookie cookie = new Cookie("SameSite","strict");
+        Cookie cookie1 = new Cookie("key","value");
+        response.addCookie(cookie);
+        response.addCookie(cookie1);
         filterChain.doFilter(servletRequest, response);
     }
 

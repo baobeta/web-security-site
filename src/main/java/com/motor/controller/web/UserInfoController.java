@@ -30,7 +30,19 @@ public class UserInfoController extends HttpServlet {
         HttpSession session = req.getSession();
         User user = (User) session.getAttribute("loginedUser");
 
+        String pid = req.getParameter("id");
+
+        if(pid==null){
+            resp.sendRedirect("/error");
+            return;
+        }
+        if (pid.length() > 4) {
+            resp.sendRedirect("/error");
+            return;
+        }
         int id = Integer.parseInt(req.getParameter("id"));
+
+
         if (user.getId() == id) {
             User userInfo = userService.findOne(id);
             req.setAttribute("user", userInfo);

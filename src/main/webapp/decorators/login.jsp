@@ -1,3 +1,4 @@
+<%@ page import="com.motor.util.CSRF" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 
          pageEncoding="UTF-8" %>
@@ -69,12 +70,21 @@
 </div>
 <!-- BEGIN LOGIN -->
 <div class="content">
+    <%
+        // generate a random CSRF token
+        String csrfToken = CSRF.getToken();
+
+// place the CSRF token in a cookie
+        javax.servlet.http.Cookie cookie = new javax.servlet.http.Cookie("csrfToken", csrfToken);
+        response.addCookie(cookie);
+    %>
     <div class="alert alert-warning ${param.errorMessage == null ? "display-hide" : ""}">
         <button class="close" data-close="alert"></button>
         <span> <c:out value="${param.errorMessage}"/>  </span>
     </div>
     <!-- BEGIN LOGIN FORM -->
     <form class="login-form" action="login" method="post">
+        <input type="hidden" name="csrfToken" value="<%= csrfToken %>"/>
         <h3 class="form-title">Sign In</h3>
         <div class="alert alert-danger display-hide">
             <button class="close" data-close="alert"></button>
@@ -110,9 +120,12 @@
             </p>
         </div>
     </form>
+
+
     <!-- END LOGIN FORM -->
     <!-- BEGIN FORGOT PASSWORD FORM -->
     <form class="forget-form" action="forget" method="post">
+        <input type="hidden" name="csrfToken" value="<%= csrfToken %>"/>
         <h3>Forget Password ?</h3>
         <p>Enter your e-mail address below to reset your password.</p>
         <div class="form-group">
@@ -127,6 +140,7 @@
     <!-- END FORGOT PASSWORD FORM -->
     <!-- BEGIN REGISTRATION FORM -->
     <form class="register-form" action="register" method="post">
+        <input type="hidden" name="csrfToken" value="<%= csrfToken %>"/>
         <input type="hidden" name="image"/>
         <h3>Sign Up</h3>
         <p class="hint">Enter your personal details below:</p>

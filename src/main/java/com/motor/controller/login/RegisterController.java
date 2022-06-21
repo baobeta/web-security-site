@@ -6,6 +6,7 @@ import com.motor.service.impl.UserServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,6 +17,31 @@ import java.io.IOException;
 @WebServlet("/register")
 public class RegisterController extends HttpServlet {
     IUserService userService = new UserServiceImpl();
+    public void doAction(HttpServletRequest request, HttpServletResponse response) {
+        // get the CSRF cookie
+        String csrfCookie = null;
+        for (Cookie cookie : request.getCookies()) {
+            if (cookie.getName().equals("csrf")) {
+                csrfCookie = cookie.getValue();
+            }
+        }
+
+        // get the CSRF form field
+        String csrfField = request.getParameter("csrf");
+
+        // validate CSRF
+        if (csrfCookie == null || csrfField == null || !csrfCookie.equals(csrfField)) {
+            try {
+                response.sendError(401);
+            } catch (IOException e) {
+                // ...
+            }
+            return;
+        }
+
+        // ...
+    }
+
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -25,6 +51,7 @@ public class RegisterController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // thiết lập tiếng Việt
+        doAction(req, resp);
         resp.setContentType("text/html");
         resp.setCharacterEncoding("UTF-8");
         req.setCharacterEncoding("UTF-8");
