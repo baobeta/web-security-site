@@ -1,3 +1,4 @@
+<%@ page import="com.motor.util.CSRF" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@include file="/common/taglib.jsp" %>
@@ -97,8 +98,16 @@
                     <span class="sep"></span>
                     <i class="fa fa-search search-btn"></i>
                     <div class="search-box">
+                        <%
+                            // generate a random CSRF token
+                            String csrfToken = CSRF.getToken();
+// place the CSRF token in a cookie
+                            javax.servlet.http.Cookie cookie = new javax.servlet.http.Cookie("csrfToken", csrfToken);
+                            response.addCookie(cookie);
+                        %>
                         <c:url var="search" value="/home/search"/>
                         <<form action="${search}">
+                        <input type="hidden" name="csrfToken" value="<%= csrfToken %>"/>
                             <div class="input-group">
                                 <input type="hiden"
                                        name="txt"

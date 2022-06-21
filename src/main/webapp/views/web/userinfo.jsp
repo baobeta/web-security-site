@@ -150,33 +150,6 @@
                                     </form>
                                 </div>
                                 <!-- END CHANGE AVATAR TAB -->
-                                <!-- CHANGE PASSWORD TAB -->
-                                <div class="tab-pane" id="tab_1_3">
-                                    <form action="userinfo?action=password" method="post">
-                                        <div class="form-group">
-                                            <label class="control-label">Current Password</label>
-                                            <input type="password" class="form-control"
-                                                   name="oldPassword" required/>
-                                            <span id="old-pass-msg"></span>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label">New Password</label>
-                                            <input name="password" type="password" required
-                                                   id="password" class="form-control"/>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label">Re-type New Password</label>
-                                            <input id="confirm_password" type="password" required class="form-control"/>
-                                            <span id='message'></span>
-                                        </div>
-                                        <div class="margiv-top-10">
-                                            <input type="submit" class="btn green-haze"
-                                                   id="pass-submit" value="Change Password"/>
-                                            <input type="reset" class="btn default"
-                                                   value="Cancel"/>
-                                        </div>
-                                    </form>
-                                </div>
                                 <!-- END CHANGE PASSWORD TAB -->
                             </div>
                         </div>

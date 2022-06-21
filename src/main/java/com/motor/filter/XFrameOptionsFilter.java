@@ -18,7 +18,8 @@ public class XFrameOptionsFilter implements Filter{
 
         HttpServletResponse response = (HttpServletResponse) servletResponse;
         response.addHeader("X-Frame-Options", "DENY");
-        response.setHeader("X-Content-Type-Options", "nosniff");
+        response.setHeader("X-Content-Type-Options", "response.setHeader(\"Set-Cookie\", \"key=value; HttpOnly; SameSite=strict\")");
+        response.setHeader("Set-Cookie", "key=value; HttpOnly; SameSite=strict");
         filterChain.doFilter(servletRequest, response);
     }
 

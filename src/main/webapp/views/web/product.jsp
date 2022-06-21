@@ -77,7 +77,9 @@
                             <h1>${detail.name}</h1>
                             <div class="price-availability-block clearfix">
                                 <div class="price">
-                                    <strong>${detail.price}<span>VNĐ</span></strong>
+                                    <strong><fmt:formatNumber value="${detail.price}" type="currency"
+                                                              maxFractionDigits="0" currencySymbol="VNĐ"/<span>VNĐ</span></strong>
+                                    >
 
                                 </div>
                                 <div class="availability">

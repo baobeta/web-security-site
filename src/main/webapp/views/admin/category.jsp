@@ -33,7 +33,6 @@
         <div class="modal fade" id="add" tabindex="-1" role="basic" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form action="" method="post">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
                             <h4 class="modal-title">Add Category</h4>
@@ -47,7 +46,6 @@
                             <button type="button" class="btn default" data-dismiss="modal">Close</button>
                             <button type="submit" class="btn blue">Save changes</button>
                         </div>
-                    </form>
                 </div>
                 <!-- /.modal-content -->
             </div>
@@ -56,7 +54,6 @@
         <div class="modal fade" id="update" tabindex="-1" role="basic" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form action="" method="post">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
                             <h4 class="modal-title">Edit Category</h4>
@@ -71,7 +68,6 @@
                             <button type="button" class="btn default" data-dismiss="modal">Close</button>
                             <button type="submit" class="btn blue">Save changes</button>
                         </div>
-                    </form>
                 </div>
                 <!-- /.modal-content -->
             </div>
