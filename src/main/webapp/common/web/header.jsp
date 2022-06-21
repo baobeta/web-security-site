@@ -83,7 +83,7 @@
                     <!-- BEGIN DROPDOWN MENU -->
                     <ul class="dropdown-menu">
 
-                        <li><a href="/home/userinfo?id=${sessionScope.loginedUser.id}">
+                        <li><a href="/home/userinfo">
                             My Profile
                         </a></li>
                         <li><a href="/home/order">My Oders</a></li>

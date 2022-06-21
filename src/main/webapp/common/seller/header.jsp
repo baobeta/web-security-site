@@ -39,7 +39,7 @@
 							src="${sessionScope.loginedUser != null ? sessionScope.loginedUser.image : "http://www.danhgiaxe.com/images/avatar.jpg"}" />
 					</a>
 						<ul class="dropdown-menu dropdown-menu-default">
-							<li><a href="userinfo?id=${sessionScope.loginedUser.id}"> <i class="icon-user"></i>
+							<li><a href="userinfo"> <i class="icon-user"></i>
 									My Profile
 							</a></li>
 							<li><a href="../logout"> <i class="icon-key"></i>

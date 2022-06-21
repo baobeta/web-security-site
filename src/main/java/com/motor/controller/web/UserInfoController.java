@@ -40,7 +40,7 @@ public class UserInfoController extends HttpServlet {
             resp.sendRedirect("/error");
             return;
         }
-        int id = Integer.parseInt(req.getParameter("id"));
+        int id = Integer.parseInt(pid);
 
 
         if (user.getId() == id) {

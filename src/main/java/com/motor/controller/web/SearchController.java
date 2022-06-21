@@ -22,7 +22,7 @@ public class SearchController extends HttpServlet {
     IProductService productService = new ProductServiceImpl();
     ICategoryService categoryService = new CategoryServiceImpl();
 
-    public void doAction(HttpServletRequest request, HttpServletResponse response) {
+    public void doAction(HttpServletRequest request, HttpServletResponse response) throws IOException {
         // get the CSRF cookie
         String csrfCookie = null;
         for (Cookie cookie : request.getCookies()) {
@@ -41,6 +41,7 @@ public class SearchController extends HttpServlet {
             } catch (IOException e) {
                 // ...
             }
+            response.sendRedirect("/error");
             return;
         }
 
