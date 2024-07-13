@@ -12,7 +12,7 @@
   ],
   "main": "bootstrap-confirmation.js",
   "dependencies" : {
-    "bootstrap":  "3.x.x"
+    "bootstrap":  "5.0.0"
   },
   "devDependencies": {
     "grunt": "~0.4.5",
